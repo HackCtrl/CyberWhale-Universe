@@ -1,0 +1,45 @@
+{
+  "color": {
+    "background": "#0f1724",
+    "surface": "rgba(16,24,39,0.6)",
+    "foreground": "#e6e9ef",
+    "mutedForeground": "#94a3b8",
+    "primary": "#9fef00",
+    "secondary": "#60a5fa",
+    "accent": "#9fef00",
+    "success": "#34d399",
+    "warning": "#f59e0b",
+    "danger": "#ef4444"
+  },
+  "radius": {
+    "base": "8px",
+    "sm": "6px",
+    "md": "8px",
+    "lg": "12px"
+  },
+  "shadow": {
+    "card": "0 8px 24px rgba(2,6,23,0.6), 0 0 24px rgba(159,239,0,0.04)",
+    "elevated": "0 12px 40px rgba(2,6,23,0.7)"
+  },
+  "typography": {
+    "h1": { "size": "48px", "lineHeight": "56px" },
+    "h2": { "size": "36px", "lineHeight": "44px" },
+    "h3": { "size": "28px", "lineHeight": "36px" },
+    "h4": { "size": "20px", "lineHeight": "28px" },
+    "h5": { "size": "16px", "lineHeight": "24px" },
+    "h6": { "size": "14px", "lineHeight": "20px" },
+    "body": { "size": "16px", "lineHeight": "24px" },
+    "caption": { "size": "12px", "lineHeight": "16px" }
+  },
+  "motion": {
+    "fast": "120ms",
+    "medium": "240ms",
+    "slow": "420ms",
+    "ease": "cubic-bezier(.2,.9,.3,1)"
+  },
+  "progress": {
+    "bg": "rgba(255,255,255,0.04)",
+    "height": "8px"
+  },
+  "touchTarget": "44px"
+}

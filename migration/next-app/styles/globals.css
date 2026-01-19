@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0f1724;
+  --foreground: #e6e9ef;
+  --primary: #9fef00;
+  --secondary: #60a5fa;
+  --radius: 8px;
+}
+
+body { background: var(--background); color: var(--foreground); }
+
+.cw-btn { border-radius: var(--radius); }
+.cw-spinner { display:inline-block; width:16px; height:16px; border-radius:50%; border:2px solid rgba(255,255,255,0.12); border-top-color:var(--primary); animation: cw-spin 800ms linear infinite }
+@keyframes cw-spin { to { transform: rotate(360deg); } }
