@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: cyber
+      POSTGRES_PASSWORD: cyber
+      POSTGRES_DB: cyberwhale
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+
+  adminer:
+    image: adminer:latest
+    restart: always
+    ports:
+      - '8080:8080'
+
+volumes:
+  db-data:

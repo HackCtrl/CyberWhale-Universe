@@ -1,0 +1,42 @@
+title,body,labels,assignees,milestone
+"Auth: Registration & Login","Story points: 8
+Acceptance criteria:
+- User can register with email+password
+- User can login/logout
+- Password reset flow (email mock)
+Notes: implement mock API for Week 2","MUST,epic:Auth,story:8",,Stage1-Week2
+"DB: PostgreSQL schema","Story points: 5
+Acceptance criteria:
+- `db/schema.sql` available in repo
+- Can be applied locally to dev DB
+Notes: finalize any missing columns","MUST,epic:DB,story:5",,Stage1-Week2
+"Core pages: Home, Courses, Course page, Dashboard","Story points: 8
+Acceptance criteria:
+- Static routes/templates available
+- Basic layout and navigation present","MUST,epic:UI,story:8",,Stage1-Week2
+"API skeleton (mock)","Story points: 5
+Acceptance criteria:
+- Mock endpoints for auth and courses return sample JSON
+- Frontend can consume mock endpoints","MUST,epic:API,story:5",,Stage1-Week2
+"Repo structure","Story points: 1
+Acceptance criteria:
+- Repository contains base folders, README and docs","MUST,epic:Infra,story:1",,Stage1-Week2
+"CI: GitHub Actions build + lint","Story points: 3
+Acceptance criteria:
+- Workflow exists and runs on push
+- Build artifact uploaded","SHOULD,epic:Infra,story:3",,Stage1-Week2
+"Docker Compose: Postgres + Adminer","Story points: 2
+Acceptance criteria:
+- `docker compose up -d` starts DB and Adminer","SHOULD,epic:Infra,story:2",,Stage1-Week2
+"Navigation & layout (header/footer)","Story points: 3
+Acceptance criteria:
+- Header and footer components implemented and responsive","SHOULD,epic:UI,story:3",,Stage1-Week2
+"CTF: basic list & submission (mock)","Story points: 5
+Acceptance criteria:
+- Tasks list present; submission endpoint saves mock records","COULD,epic:CTF,story:5",,Stage1-Week2
+"Leaderboard (mock)","Story points: 3
+Acceptance criteria:
+- Leaderboard page shows sample ranking","COULD,epic:CTF,story:3",,Stage1-Week2
+"AI Agents: simple CRUD (mock)","Story points: 5
+Acceptance criteria:
+- CRUD UI for agents backed by mock API","COULD,epic:AI,story:5",,Stage1-Week2
