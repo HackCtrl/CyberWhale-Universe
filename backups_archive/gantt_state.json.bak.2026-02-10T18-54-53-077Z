@@ -1,0 +1,933 @@
+{
+  "meta": {
+    "source": "Диаграмма Ганта.xlsx",
+    "importedAt": "2026-02-10T18:44:56.791Z",
+    "sheetName": "Диаграмма Ганта"
+  },
+  "tasks": [
+    {
+      "id": "1",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "43101",
+      "title": "Анализ и планирование",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "1.1.1",
+      "title": "Определение стека технологий и архитектуры MVP",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "1.1.2",
+      "title": "Составление Product Backlog с приоритизацией (MoSCoW)",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "1.2",
+      "title": "Дизайн и UX/UI",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "1.2.1",
+      "title": "Проектирование пользовательских сценариев (User Flow)",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "1.2.2",
+      "title": "Создание вайрфреймов основных экранов",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "1.2.3",
+      "title": "Разработка дизайн-системы в Figma (цвета, шрифты, компоненты)",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "1.2.4",
+      "title": "Визуальный дизайн ключевых страницы: Главная, ЛК, Курсы, CTF",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "1.3",
+      "title": "Настройка среды и инфраструктуры",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "1.3.1",
+      "title": "Создание репозитория GitHub с базовой структурой",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "1.3.2",
+      "title": "Настройка CI/CD (GitHub Actions)",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "1.3.3",
+      "title": "Развертывание тестового сервера (Yandex Cloud/VPS)",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "1.3.4",
+      "title": "Настройка домена и SSL-сертификата",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "2",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "2.1",
+      "title": "База данных и модели",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "2.1.1",
+      "title": "Проектирование схемы БД (PostgreSQL)",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "2.1.2",
+      "title": "Создание моделей: User, Course, Lesson, CTFChallenge, UserProgress",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "2.1.3",
+      "title": "Настройка миграций (TypeORM / Prisma)",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "2.2",
+      "title": "API: Аутентификация и авторизация",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "2.2.1",
+      "title": "Реализауия регитсрации/входа (email + пароль)",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "2.2.2",
+      "title": "JWT-токены, middleware для проверки прав",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "2.2.3",
+      "title": "Восстановление пароля (email-вертификация",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "2.3",
+      "title": "API: Обучение и курсы",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "2.3.1",
+      "title": "GRUD для курсов и уроков",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "2.3.2",
+      "title": "Система прогресса (отметка о прохождении курса)",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "2.3.3",
+      "title": "Генерация сертификата (PDF)",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "2.4",
+      "title": "API: CTF-Платформа",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "2.4.1",
+      "title": "GRUD для CTF-задач",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "2.4.2",
+      "title": "Система проверки флагов",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "2.4.3",
+      "title": "Таблица лидеров и статистика",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "2.5",
+      "title": "Интеграция с ИИ (GigaChat API)",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "2.5.1",
+      "title": "Настройка API-клиента для GigaChat",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "2.5.2",
+      "title": "Реализация чат-интерфейса для помощи по задачам",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "2.5.3",
+      "title": "Кэширование ответов для экономии токенов",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.1",
+      "title": "Базовая структура и компоненты",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.1.1",
+      "title": "Настройка Next.js + TypeScript + Tailwind CSS",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.1.2",
+      "title": "Создание компонентов: Header, Footer, Sidebar, Card, Button",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.1.3",
+      "title": "Настрока роутинга и навигации",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.2",
+      "title": "Страницы: Главнвя и ЛК",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.2.1",
+      "title": "Лендинг с Hero-секцией с СТА",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.2.2",
+      "title": "Личный кабинет: прогресс, активные курсы, статистика",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.2.3",
+      "title": "Страница профиля (редактирование данных)",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.3",
+      "title": "Страницы: Обучения",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.3.1",
+      "title": "Католог курсов с фильтрами",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.3.2",
+      "title": "Страница курса: список уроков, прогресс-бар",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.3.3",
+      "title": "Интерфейс урока: текст, изображения, тест",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.3.4",
+      "title": "Система завершения урока и перехода к следующему",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.4",
+      "title": "Страницы: CTF-платформа",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.4.1",
+      "title": "Список задач с фильтрами по сложности и категриям",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.4.2",
+      "title": "Страница задачи: описание, форма для флага, подсказки",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.4.3",
+      "title": "Таблица лидеров (рейтинг пользователей)",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.4.4",
+      "title": "История решенных задач",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.5",
+      "title": "Интеграция с бэкендом",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.5.1",
+      "title": "Настрока API-клиента (axios/fetch)",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.5.2",
+      "title": "Обработка состояний загрузки и ошибок",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "3.5.3",
+      "title": "Кэширование данных (React Query/SWR)",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "4",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "4.1",
+      "title": "Тестирование и отладка",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "4.1.1",
+      "title": "Функциональное тестирование всех сценариев",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "4.1.2",
+      "title": "Исправление критических и мажорных багов",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "4.1.3",
+      "title": "Тестирование производительности и безопасности",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "4.1.4",
+      "title": "Адаптивная верстка (mobile, tablet, desktop)",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "4.2",
+      "title": "Наполнение контентом",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "4.2.1",
+      "title": "Создание 2 курсов (5 уроков каждый) с тестами",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "4.2.2",
+      "title": "Разработка 10-15 CTF-задач (Web, Crypto, Forensics)",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "4.2.3",
+      "title": "Написание статей для базы знаний (5-7 статей)",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "4.3",
+      "title": "Финализация и деплой",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "4.3.1",
+      "title": "Настройка продакшен-среды (Docker, Nginx)",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "4.3.2",
+      "title": "Перенос БД на продакшен",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "4.3.3",
+      "title": "Финальное тестирование на продакшен-сервере",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "4.4",
+      "title": "Запуск и мониторинг",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "4.4.1",
+      "title": "Открытие доступа для первых пользователей",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "4.4.2",
+      "title": "Настройка аналитики (Yandex.Metrica)",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "4.4.3",
+      "title": "Мониторинг ошибок (Sentry)",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "4.4.4",
+      "title": "Сбор обратной связи",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    }
+  ]
+}

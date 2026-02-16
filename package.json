@@ -1,0 +1,10 @@
+{
+  "name": "cyberwhale-universe-root-proxy",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "npm --prefix \"CyberWhale Universe Design Concept (1)\" run dev",
+    "install-sub": "npm --prefix \"CyberWhale Universe Design Concept (1)\" install",
+    "build": "npm --prefix \"CyberWhale Universe Design Concept (1)\" run build"
+  }
+}

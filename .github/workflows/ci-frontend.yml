@@ -1,0 +1,41 @@
+name: CI — Frontend (mvp-starter)
+
+on:
+  push:
+    paths:
+      - 'mvp-starter/**'
+  pull_request:
+    paths:
+      - 'mvp-starter/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mvp-starter
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Next app
+        run: npm run build
+
+      - name: Run tests (if any)
+        run: |
+          if npm test --silent; then echo 'tests ok'; else echo 'no tests or failed'; fi

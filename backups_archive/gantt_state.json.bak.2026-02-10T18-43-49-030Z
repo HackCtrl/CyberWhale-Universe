@@ -1,0 +1,1005 @@
+{
+  "meta": {
+    "source": "Диаграмма Ганта.xlsx",
+    "importedAt": "2026-02-10T18:43:01.159Z",
+    "sheetName": "Диаграмма Ганта"
+  },
+  "tasks": [
+    {
+      "id": "row-2",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-3",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-4",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-5",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-6",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-7",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-8",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-9",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-10",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-11",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-12",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-13",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-14",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-15",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-16",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-17",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-18",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-19",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-20",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-21",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-22",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-23",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-24",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-25",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-26",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-27",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-28",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-29",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-30",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-31",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-32",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-33",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-34",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-35",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-36",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-37",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-38",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-39",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-40",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-41",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-42",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-43",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-44",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-45",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-46",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-47",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-48",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-49",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-50",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-51",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-52",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-53",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-54",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-55",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-56",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-57",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-58",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-59",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-60",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-61",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-62",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-63",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-64",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-65",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-66",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-67",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-68",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-69",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-70",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-71",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-72",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-73",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-74",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-75",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-76",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-77",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-78",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-79",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-80",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-81",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-82",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-83",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "row-84",
+      "title": "",
+      "stage": "",
+      "progress": 0,
+      "weeklyTargets": {
+        "week1": null,
+        "week2": null,
+        "week3": null
+      },
+      "notes": ""
+    }
+  ]
+}
