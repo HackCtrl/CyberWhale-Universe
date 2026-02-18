@@ -78,4 +78,20 @@
     "old": 0,
     "new": 12
   }
+
+  ,
+  {
+    "timestamp": "2026-02-18T12:00:00.000Z",
+    "id": "1.3.1",
+    "old": 0,
+    "new": 0.12,
+    "note": "Repository created and basic structure (README_STAGE1, workflows, docs)"
+  },
+  {
+    "timestamp": "2026-02-18T12:00:00.000Z",
+    "id": "2.1.1",
+    "old": 0,
+    "new": 0.12,
+    "note": "DB schema documented in docs/DB_SCHEMA.md"
+  }
 ]
