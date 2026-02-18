@@ -167,7 +167,7 @@
       "stage": "1",
       "progress": 0,
       "weeklyTargets": {
-        "week1": null,
+        "week1": true,
         "week2": null,
         "week3": null
       },
@@ -245,7 +245,7 @@
       "stage": "2",
       "progress": 0,
       "weeklyTargets": {
-        "week1": null,
+        "week1": true,
         "week2": null,
         "week3": null
       },
