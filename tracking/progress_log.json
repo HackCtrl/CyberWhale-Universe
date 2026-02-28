@@ -140,6 +140,14 @@
     "new": 12,
     "note": "Baseline locked to 12% for Week1 Stage1 per request"
   }
+  ,
+  {
+    "timestamp": "2026-02-28T15:46:00.000Z",
+    "id": "2.4.2",
+    "old": 0,
+    "new": 0.12,
+    "note": "Implemented basic flag-check endpoint and frontend submit form"
+  }
 ]
 
 

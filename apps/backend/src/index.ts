@@ -110,6 +110,69 @@ app.get('/api/auth/me', authMiddleware, (req, res) => {
 	return res.json({ user: req.user });
 });
 
+// ADMIN USERS CRUD
+app.get('/api/admin/users', authMiddleware, async (req, res) => {
+	try {
+		const users = await prisma.user.findMany({
+			select: {
+				id: true,
+				email: true,
+				name: true,
+				createdAt: true,
+				_count: { select: { progress: true } }
+			},
+			orderBy: { createdAt: 'desc' }
+		});
+		return res.json(users.map((u) => ({
+			id: u.id,
+			email: u.email,
+			name: u.name,
+			createdAt: u.createdAt,
+			progressRecords: u._count.progress
+		})));
+	} catch (e) {
+		console.error(e);
+		return res.status(500).json({ error: 'server error' });
+	}
+});
+
+app.put('/api/admin/users/:id', authMiddleware, async (req: any, res) => {
+	const id = Number(req.params.id);
+	const { email, name } = req.body;
+	if (!id) return res.status(400).json({ error: 'invalid id' });
+	if (!email && typeof name === 'undefined') return res.status(400).json({ error: 'nothing to update' });
+	try {
+		const user = await prisma.user.update({
+			where: { id },
+			data: {
+				email: email ?? undefined,
+				name: typeof name === 'undefined' ? undefined : name
+			}
+		});
+		return res.json({ id: user.id, email: user.email, name: user.name, createdAt: user.createdAt });
+	} catch (e: any) {
+		if (e.code === 'P2002') return res.status(409).json({ error: 'email already exists' });
+		if (e.code === 'P2025') return res.status(404).json({ error: 'not found' });
+		console.error(e);
+		return res.status(500).json({ error: 'server error' });
+	}
+});
+
+app.delete('/api/admin/users/:id', authMiddleware, async (req: any, res) => {
+	const id = Number(req.params.id);
+	if (!id) return res.status(400).json({ error: 'invalid id' });
+	if (req.user?.id === id) return res.status(400).json({ error: 'cannot delete self' });
+	try {
+		await prisma.userProgress.deleteMany({ where: { userId: id } });
+		await prisma.user.delete({ where: { id } });
+		return res.json({ ok: true });
+	} catch (e: any) {
+		if (e.code === 'P2025') return res.status(404).json({ error: 'not found' });
+		console.error(e);
+		return res.status(500).json({ error: 'server error' });
+	}
+});
+
 // COURSES CRUD
 app.get('/api/courses', async (req, res) => {
 	try {
@@ -230,6 +293,112 @@ app.delete('/api/lessons/:id', authMiddleware, async (req, res) => {
 		return res.json({ ok: true });
 	} catch (e: any) {
 		if (e.code === 'P2025') return res.status(404).json({ error: 'not found' });
+		console.error(e);
+		return res.status(500).json({ error: 'server error' });
+	}
+});
+
+// CTF challenges CRUD
+app.get('/api/ctf', async (req, res) => {
+	try {
+		const challenges = await prisma.cTFChallenge.findMany();
+		return res.json(challenges);
+	} catch (e) {
+		console.error(e);
+		return res.status(500).json({ error: 'server error' });
+	}
+});
+
+// List solved challenges for the current user (placed before /api/ctf/:id to avoid route conflicts)
+app.get('/api/ctf/solved', authMiddleware, async (req, res) => {
+	try {
+		const solved = await prisma.cTFSolve.findMany({ where: { userId: req.user.id } });
+		return res.json(solved);
+	} catch (e) {
+		console.error(e);
+		return res.status(500).json({ error: 'server error' });
+	}
+});
+
+app.post('/api/ctf', authMiddleware, async (req, res) => {
+	const { title, description, flag, difficulty } = req.body;
+	if (!title || !flag) return res.status(400).json({ error: 'title and flag required' });
+	try {
+		const challenge = await prisma.cTFChallenge.create({ data: { title, description, flag, difficulty: Number(difficulty) || 1 } });
+		return res.status(201).json(challenge);
+	} catch (e) {
+		console.error(e);
+		return res.status(500).json({ error: 'server error' });
+	}
+});
+
+app.get('/api/ctf/:id', async (req, res) => {
+	const id = Number(req.params.id);
+	try {
+		const challenge = await prisma.cTFChallenge.findUnique({ where: { id } });
+		if (!challenge) return res.status(404).json({ error: 'not found' });
+		return res.json(challenge);
+	} catch (e) {
+		console.error(e);
+		return res.status(500).json({ error: 'server error' });
+	}
+});
+
+app.put('/api/ctf/:id', authMiddleware, async (req, res) => {
+	const id = Number(req.params.id);
+	const { title, description, flag, difficulty } = req.body;
+	try {
+		const challenge = await prisma.cTFChallenge.update({ where: { id }, data: { title, description, flag, difficulty: difficulty ? Number(difficulty) : undefined } });
+		return res.json(challenge);
+	} catch (e: any) {
+		if (e.code === 'P2025') return res.status(404).json({ error: 'not found' });
+		console.error(e);
+		return res.status(500).json({ error: 'server error' });
+	}
+});
+
+app.delete('/api/ctf/:id', authMiddleware, async (req, res) => {
+	const id = Number(req.params.id);
+	try {
+		await prisma.cTFChallenge.delete({ where: { id } });
+		return res.json({ ok: true });
+	} catch (e: any) {
+		if (e.code === 'P2025') return res.status(404).json({ error: 'not found' });
+		console.error(e);
+		return res.status(500).json({ error: 'server error' });
+	}
+});
+
+// Submit flag for a CTF challenge
+app.post('/api/ctf/:id/submit', authMiddleware, async (req, res) => {
+	const id = Number(req.params.id);
+	const { flag } = req.body || {};
+	if (!flag) return res.status(400).json({ error: 'flag required' });
+	try {
+		const challenge = await prisma.cTFChallenge.findUnique({ where: { id } });
+		if (!challenge) return res.status(404).json({ error: 'challenge not found' });
+
+		// already solved?
+		const existing = await prisma.cTFSolve.findFirst({ where: { ctfId: id, userId: req.user.id } });
+		if (existing) return res.json({ ok: false, alreadySolved: true });
+
+		if (flag === challenge.flag) {
+			const solved = await prisma.cTFSolve.create({ data: { userId: req.user.id, ctfId: id } });
+			return res.json({ ok: true, solvedAt: solved.solvedAt });
+		}
+		return res.json({ ok: false, correct: false });
+	} catch (e) {
+		console.error(e);
+		return res.status(500).json({ error: 'server error' });
+	}
+});
+
+// List solved challenges for the current user
+app.get('/api/ctf/solved', authMiddleware, async (req, res) => {
+	try {
+		const solved = await prisma.cTFSolve.findMany({ where: { userId: req.user.id } });
+		return res.json(solved);
+	} catch (e) {
 		console.error(e);
 		return res.status(500).json({ error: 'server error' });
 	}

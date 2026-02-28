@@ -15,6 +15,7 @@ model User {
   name         String?
   createdAt    DateTime       @default(now())
   progress     UserProgress[]
+  ctfSolves    CTFSolve[]
 }
 
 model Course {
@@ -39,6 +40,16 @@ model CTFChallenge {
   description String?
   flag        String
   difficulty  Int
+  solves      CTFSolve[]
+}
+
+model CTFSolve {
+  id       Int          @id @default(autoincrement())
+  user     User         @relation(fields: [userId], references: [id])
+  userId   Int
+  ctf      CTFChallenge @relation(fields: [ctfId], references: [id])
+  ctfId    Int
+  solvedAt DateTime     @default(now())
 }
 
 model UserProgress {
