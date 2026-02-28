@@ -16,7 +16,15 @@ export default function LoginPage() {
       });
       const data = await res.json();
       if (!res.ok) setMsg(data.error || 'Ошибка');
-      else setMsg('Токен: ' + (data.token ? 'получен' : ''));
+      else {
+        if (data.token) {
+          localStorage.setItem('token', data.token);
+          setMsg('Успешно, перенаправление...');
+          setTimeout(() => window.location.href = '/', 600);
+        } else {
+          setMsg('Вход выполнен');
+        }
+      }
     } catch (err) {
       setMsg('Сервер недоступен');
     }

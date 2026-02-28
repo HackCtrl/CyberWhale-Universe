@@ -17,7 +17,22 @@ export default function RegisterPage() {
       });
       const data = await res.json();
       if (!res.ok) setMsg(data.error || 'Ошибка');
-      else setMsg('Успешно: ' + (data.email || ''));
+      else {
+        setMsg('Успешно, перенаправление...');
+        // attempt auto-login after register
+        if (email && password) {
+          setTimeout(async () => {
+            try {
+              const r = await fetch('http://localhost:4000/api/auth/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, password }) });
+              const d = await r.json();
+              if (r.ok && d.token) {
+                localStorage.setItem('token', d.token);
+                window.location.href = '/';
+              }
+            } catch (e) {}
+          }, 400);
+        }
+      }
     } catch (err) {
       setMsg('Сервер недоступен');
     }
