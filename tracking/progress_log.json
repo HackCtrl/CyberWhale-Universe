@@ -132,6 +132,14 @@
     "new": 0.12,
     "note": "Initial backend: added lesson-complete endpoint and course progress calculation"
   }
+  ,
+  {
+    "timestamp": "2026-02-28T12:05:00.000Z",
+    "id": "WEEK1_STAGE1",
+    "old": 0,
+    "new": 12,
+    "note": "Baseline locked to 12% for Week1 Stage1 per request"
+  }
 ]
 
 
