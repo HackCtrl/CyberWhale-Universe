@@ -425,9 +425,9 @@
       "id": "2.4.3",
       "title": "Таблица лидеров и статистика",
       "stage": "2",
-      "progress": 0,
+      "progress": 0.12,
       "weeklyTargets": {
-        "week1": null,
+        "week1": true,
         "week2": null,
         "week3": null
       },

@@ -148,6 +148,14 @@
     "new": 0.12,
     "note": "Implemented basic flag-check endpoint and frontend submit form"
   }
+  ,
+  {
+    "timestamp": "2026-02-28T16:10:00.000Z",
+    "id": "2.4.3",
+    "old": 0,
+    "new": 0.12,
+    "note": "Implemented leaderboard and stats endpoints + frontend page"
+  }
 ]
 
 

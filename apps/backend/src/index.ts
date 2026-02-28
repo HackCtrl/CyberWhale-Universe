@@ -320,6 +320,42 @@ app.get('/api/ctf/solved', authMiddleware, async (req, res) => {
 	}
 });
 
+// Leaderboard: top users by score (sum of difficulty) and solves count
+app.get('/api/ctf/leaderboard', async (req, res) => {
+	const limit = Number(req.query.limit) || 10;
+	try {
+		const solves = await prisma.cTFSolve.findMany({ include: { ctf: true, user: true } });
+		const byUser: Record<string, { userId: number; email: string; name?: string; solves: number; score: number } > = {};
+		for (const s of solves) {
+			const uid = String(s.userId);
+			if (!byUser[uid]) byUser[uid] = { userId: s.userId, email: s.user.email, name: s.user.name || undefined, solves: 0, score: 0 };
+			byUser[uid].solves += 1;
+			byUser[uid].score += (s.ctf?.difficulty || 1);
+		}
+		const list = Object.values(byUser).sort((a, b) => b.score - a.score || b.solves - a.solves).slice(0, limit);
+		return res.json(list);
+	} catch (e) {
+		console.error(e);
+		return res.status(500).json({ error: 'server error' });
+	}
+});
+
+// Stats: per-challenge solves count and basic totals
+app.get('/api/ctf/stats', async (req, res) => {
+	try {
+		const challenges = await prisma.cTFChallenge.findMany({ select: { id: true, title: true, difficulty: true } });
+		const stats = await Promise.all(challenges.map(async (c) => {
+			const count = await prisma.cTFSolve.count({ where: { ctfId: c.id } });
+			return { id: c.id, title: c.title, difficulty: c.difficulty, solves: count };
+		}));
+		const totalSolves = await prisma.cTFSolve.count();
+		return res.json({ totalSolves, challenges: stats });
+	} catch (e) {
+		console.error(e);
+		return res.status(500).json({ error: 'server error' });
+	}
+});
+
 app.post('/api/ctf', authMiddleware, async (req, res) => {
 	const { title, description, flag, difficulty } = req.body;
 	if (!title || !flag) return res.status(400).json({ error: 'title and flag required' });
