@@ -6,17 +6,15 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+// Restored schema matching applied initial migration (integer IDs)
 
 model User {
   id           Int            @id @default(autoincrement())
   email        String         @unique
   passwordHash String
-  // Поля для восстановления пароля
-  resetToken   String?        
-  resetExpiry  DateTime?     
   name         String?
-  progress     UserProgress[]
   createdAt    DateTime       @default(now())
+  progress     UserProgress[]
 }
 
 model Course {
@@ -36,7 +34,7 @@ model Lesson {
 }
 
 model CTFChallenge {
-  id          Int     @id @default(autoincrement())
+  id          Int    @id @default(autoincrement())
   title       String
   description String?
   flag        String
@@ -52,3 +50,4 @@ model UserProgress {
   progress  Int      @default(0)
   updatedAt DateTime @updatedAt
 }
+

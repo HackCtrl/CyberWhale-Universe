@@ -1,3 +1,4 @@
+
 # Prisma schema and migration notes
 
 This project uses Prisma with PostgreSQL. Key commands:

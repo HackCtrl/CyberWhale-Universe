@@ -234,3 +234,48 @@ app.delete('/api/lessons/:id', authMiddleware, async (req, res) => {
 		return res.status(500).json({ error: 'server error' });
 	}
 });
+
+// PROGRESS: mark lesson completed and update course progress
+app.post('/api/progress/lesson', authMiddleware, async (req, res) => {
+	const { lessonId } = req.body;
+	if (!lessonId) return res.status(400).json({ error: 'lessonId required' });
+	try {
+		const userId = req.user.id;
+		const lesson = await prisma.lesson.findUnique({ where: { id: lessonId } });
+		if (!lesson) return res.status(404).json({ error: 'lesson not found' });
+
+		let lp = await prisma.userProgress.findFirst({ where: { userId, lessonId } });
+		if (!lp) {
+			lp = await prisma.userProgress.create({
+				data: {
+					userId,
+					lessonId,
+					courseId: lesson.courseId,
+					progress: 100,
+					completed: true,
+					completedAt: new Date()
+				}
+			});
+		} else {
+			lp = await prisma.userProgress.update({ where: { id: lp.id }, data: { progress: 100, completed: true, completedAt: new Date() } });
+		}
+
+		// Recalculate course progress percentage
+		const lessonsCount = await prisma.lesson.count({ where: { courseId: lesson.courseId } });
+		const completedCount = await prisma.userProgress.count({ where: { userId, courseId: lesson.courseId, completed: true } });
+		const percent = lessonsCount ? Math.floor((completedCount / lessonsCount) * 100) : 0;
+
+		// maintain a course-level progress record (lessonId = null)
+		let cp = await prisma.userProgress.findFirst({ where: { userId, courseId: lesson.courseId, lessonId: null } });
+		if (!cp) {
+			await prisma.userProgress.create({ data: { userId, courseId: lesson.courseId, progress: percent, completed: percent === 100, completedAt: percent === 100 ? new Date() : null } });
+		} else {
+			await prisma.userProgress.update({ where: { id: cp.id }, data: { progress: percent, completed: percent === 100, completedAt: percent === 100 ? new Date() : cp.completedAt } });
+		}
+
+		return res.json({ ok: true, lessonProgress: lp, coursePercent: percent });
+	} catch (e) {
+		console.error(e);
+		return res.status(500).json({ error: 'server error' });
+	}
+});

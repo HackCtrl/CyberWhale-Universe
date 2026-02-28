@@ -124,6 +124,14 @@
     "new": 0.12,
     "note": "Initial setup: added apps/backend/prisma/README_PRISMA.md and reviewed schema.prisma"
   }
+  ,
+  {
+    "timestamp": "2026-02-28T12:00:00.000Z",
+    "id": "2.3.2",
+    "old": 0,
+    "new": 0.12,
+    "note": "Initial backend: added lesson-complete endpoint and course progress calculation"
+  }
 ]
 
 
