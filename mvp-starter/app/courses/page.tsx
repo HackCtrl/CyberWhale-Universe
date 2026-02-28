@@ -11,6 +11,7 @@ export default function CoursesPage() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
+  const [coursePercent, setCoursePercent] = useState<number | null>(null);
   const [lessonTitle, setLessonTitle] = useState('');
   const [lessonContent, setLessonContent] = useState('');
   const base = 'http://localhost:4000';
@@ -41,6 +42,31 @@ export default function CoursesPage() {
     const res = await fetch(`${base}/api/courses/${id}`);
     const data = await res.json();
     setSelectedCourse(data);
+    setCoursePercent(null);
+  }
+
+  async function markLessonComplete(lessonId: number) {
+    try {
+      const res = await fetch(`${base}/api/progress/lesson`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json', Authorization: token ? `Bearer ${token}` : '' },
+        body: JSON.stringify({ lessonId })
+      });
+      if (!res.ok) {
+        alert('Progress update failed: ' + (await res.text()));
+        return;
+      }
+      const data = await res.json();
+      // backend returns { ok: true, lessonProgress: {...}, coursePercent: number }
+      if (typeof data.coursePercent === 'number') setCoursePercent(data.coursePercent);
+      // refresh course to show any server-side changes to lessons
+      if (selectedCourse) await selectCourse(selectedCourse.id);
+    } catch (err) {
+      // minimal error handling for MVP
+      // eslint-disable-next-line no-console
+      console.error(err);
+      alert('Error updating progress');
+    }
   }
 
   async function createLesson(e: React.FormEvent) {
@@ -97,9 +123,18 @@ export default function CoursesPage() {
               <p>{selectedCourse.description}</p>
 
               <h4>Lessons</h4>
+              <div style={{ marginBottom: 8 }}>
+                <strong>Course progress:</strong>{' '}
+                {coursePercent !== null ? `${Math.round(coursePercent * 100)}%` : '—'}
+              </div>
               <ul>
                 {selectedCourse.lessons?.map(l => (
-                  <li key={l.id}><strong>{l.title}</strong> — {l.content}</li>
+                  <li key={l.id} style={{ marginBottom: 8 }}>
+                    <strong>{l.title}</strong> — {l.content}
+                    <div>
+                      <button onClick={() => markLessonComplete(l.id)} style={{ marginTop: 6 }}>Mark complete</button>
+                    </div>
+                  </li>
                 ))}
               </ul>
 
