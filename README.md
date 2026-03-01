@@ -1,4 +1,21 @@
+# CyberWhale Universe — локальный старт (MVP шаблон)
+
+Кратко: в корне проекта есть `docker-compose.yml`, который поднимает Postgres, backend и frontend.
+
+Локальный запуск (требуется Docker):
+
+```bash
+docker-compose up --build
+```
+
+Проверки после старта:
+- Frontend: http://localhost:3000
+- Backend health: http://localhost:4000/health
+
+Если вы запускаете без Docker, можно перейти в `apps/backend` и `apps/frontend` и запустить локально через `npm ci` и `npm run dev`.
 # CyberWhale Universe
+
+![CI](https://github.com/HackCtrl/CyberWhale-Universe/actions/workflows/ci.yml/badge.svg)
 
 Official repository for the CyberWhale Universe design concept and UI prototype.
 
@@ -31,6 +48,27 @@ npm install
 npm run dev
 ```
 
+Technology stack & local dev (added)
+----------------------------------
+Проект использует следующий стек (MVP):
+
+- Frontend: Next.js 14, TypeScript, Tailwind CSS
+- Backend: Node.js, Express, TypeScript
+- DB: PostgreSQL + Prisma
+- Auth: JWT (access + refresh)
+- Containerization: Docker / docker-compose
+
+Локальный запуск (MVP skeleton):
+
+```bash
+# из корня проекта
+docker-compose up --build
+
+# или локально для отдельных приложений
+cd apps/backend && npm ci && npm run dev
+cd apps/frontend && npm ci && npm run dev
+```
+
 Repository structure (selected)
 ------------------------------
 - `src/` — original UI prototype and components
@@ -38,6 +76,15 @@ Repository structure (selected)
 - `migration/next-app/` — Next.js 14 + TypeScript scaffold
 - `DESIGN_SYSTEM.md` — design system documentation and Figma prompt
 - `PR_DESCRIPTION.md` — summary of changes and testing guidance
+
+Repository basics (checked):
+
+- `README.md` — present
+- `LICENSE` — present (MIT)
+- `CONTRIBUTING.md` — present
+- `.github/workflows/ci.yml` — CI workflow present
+- `package.json` — present
+
 
 Contributing
 ------------

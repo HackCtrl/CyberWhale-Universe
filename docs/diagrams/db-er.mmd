@@ -1,0 +1,112 @@
+%% ER diagram for CyberWhale Universe (from docs/db/schema.sql)
+erDiagram
+  USER {
+    UUID id PK
+    VARCHAR email
+    TEXT password_hash
+    VARCHAR display_name
+    user_role role
+    TIMESTAMP created_at
+  }
+
+  COURSE {
+    UUID id PK
+    VARCHAR slug
+    VARCHAR title
+    TEXT short_description
+    NUMERIC price
+    BOOLEAN is_free
+    UUID author_id FK
+  }
+
+  LESSON {
+    UUID id PK
+    UUID course_id FK
+    VARCHAR title
+    INTEGER position
+    INTEGER duration_minutes
+  }
+
+  COURSE_ENROLLMENT {
+    UUID id PK
+    UUID user_id FK
+    UUID course_id FK
+    enrollment_status status
+    TIMESTAMP enrolled_at
+  }
+
+  USER_LESSON_PROGRESS {
+    UUID id PK
+    UUID user_id FK
+    UUID lesson_id FK
+    lesson_status status
+    SMALLINT progress_percent
+  }
+
+  USER_COURSE_PROGRESS {
+    UUID id PK
+    UUID user_id FK
+    UUID course_id FK
+    SMALLINT progress_percent
+  }
+
+  CTF_EVENT {
+    UUID id PK
+    VARCHAR name
+    VARCHAR slug
+    TIMESTAMP start_at
+    TIMESTAMP end_at
+  }
+
+  CTF_CHALLENGE {
+    UUID id PK
+    UUID event_id FK
+    VARCHAR title
+    VARCHAR category
+    INTEGER points
+  }
+
+  USER_CTF_SUBMISSION {
+    UUID id PK
+    UUID user_id FK
+    UUID challenge_id FK
+    TEXT submitted_value
+    BOOLEAN is_correct
+    TIMESTAMP submitted_at
+  }
+
+  TAG {
+    UUID id PK
+    VARCHAR name
+  }
+
+  COURSE_TAG {
+    UUID course_id FK
+    UUID tag_id FK
+  }
+
+  CHALLENGE_TAG {
+    UUID challenge_id FK
+    UUID tag_id FK
+  }
+
+  %% Relationships
+  USER ||--o{ COURSE_ENROLLMENT : "enrolls"
+  COURSE ||--o{ COURSE_ENROLLMENT : "has"
+
+  COURSE ||--o{ LESSON : "contains"
+  USER ||--o{ USER_LESSON_PROGRESS : "progress"
+  LESSON ||--o{ USER_LESSON_PROGRESS : "tracked_in"
+
+  USER ||--o{ USER_COURSE_PROGRESS : "course_progress"
+  COURSE ||--o{ USER_COURSE_PROGRESS : "has_progress"
+
+  CTF_EVENT ||--o{ CTF_CHALLENGE : "includes"
+  USER ||--o{ USER_CTF_SUBMISSION : "submits"
+  CTF_CHALLENGE ||--o{ USER_CTF_SUBMISSION : "received"
+
+  COURSE ||--o{ COURSE_TAG : "tagged"
+  TAG ||--o{ COURSE_TAG : "used_on"
+
+  CTF_CHALLENGE ||--o{ CHALLENGE_TAG : "tagged"
+  TAG ||--o{ CHALLENGE_TAG : "used_on"

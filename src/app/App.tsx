@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navigation } from './components/Navigation';
+import AiWidget from './components/AiWidget';
 import { CosmicBackground } from './components/CosmicBackground';
 import { HomePage } from './pages/HomePage';
 import { AuthPage } from './pages/AuthPage';
@@ -40,7 +41,9 @@ export default function App() {
             <Route path="/admin" element={<AdminPage />} />
           </Routes>
         </div>
+        <AiWidget />
       </div>
     </BrowserRouter>
   );
 }
+

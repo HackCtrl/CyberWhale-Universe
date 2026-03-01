@@ -63,11 +63,12 @@ export function AuthPage() {
     await new Promise(resolve => setTimeout(resolve, 1500));
 
     setLoading(false);
-    setSuccess(true);
+      setSuccess(true);
+      localStorage.setItem('token', 'mock_vite_token');
+      localStorage.setItem('userName', formData.name || formData.email || 'User');
 
-    // Редирект на dashboard
-    setTimeout(() => {
-      navigate('/dashboard');
+      setTimeout(() => {
+        window.location.href = '/';
     }, 1000);
   };
 
@@ -347,3 +348,5 @@ export function AuthPage() {
     </div>
   );
 }
+
+

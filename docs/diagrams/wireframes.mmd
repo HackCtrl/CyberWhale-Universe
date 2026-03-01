@@ -1,0 +1,41 @@
+%% Mermaid block diagrams for wireframes
+%% Save as docs/diagrams/wireframes.mmd
+
+flowchart TB
+  subgraph Home[Главная]
+    H1["Header: Logo — Курсы — CTF — Войти"]
+    HERO["HERO: H1 + CTA"]
+    POP["Popular Courses: Card x3"]
+    H1 --> HERO --> POP
+  end
+
+  subgraph Dashboard[Личный кабинет]
+    D_H[Header]
+    D_TOP["Приветствие — Прогресс"]
+    D_MAIN["Мои курсы: список"]
+    D_SIDE["Sidebar: Настройки — Сертификаты"]
+    D_H --> D_TOP --> D_MAIN
+    D_MAIN --> D_SIDE
+  end
+
+  subgraph Catalog[Каталог / Карточка]
+    C_H[Header]
+    FILTERS["Search & Filters"]
+    GRID["Grid of Course Cards"]
+    C_H --> FILTERS --> GRID
+    COURSE["Course Detail: Title — Program — CTA"]
+  end
+
+  subgraph CTF[CTF]
+    CT_H[Header]
+    CT_TOP["Event Header: name — dates — CTA"]
+    TASKS["Tasks Table"]
+    LEAD["Leaderboard — Timer"]
+    CT_H --> CT_TOP --> TASKS
+    TASKS --> LEAD
+  end
+
+  %% Links
+  POP -.-> GRID
+  D_MAIN -.-> COURSE
+  TASKS -.-> D_MAIN

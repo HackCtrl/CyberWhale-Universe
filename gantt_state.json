@@ -1,0 +1,82 @@
+{
+  "updatedAt": "2026-02-10T00:00:00Z",
+  "rules": {
+    "weeksPerStage": 3,
+    "weekTargets": { "week1": 35, "week2": 70, "week3": 95 },
+    "note": "Каждая задача выполняется постепенно по 3 неделям: неделя1≈35%, неделя2≈70%, неделя3≈95%"
+  },
+  "tasks": {
+    "1.1.1": { "title": "Определение стека технологий и архитектуры MVP", "stage": 1, "progress": 35, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Неделя 1 этапа 1 — цель 35% (архитектура зафиксирована)" },
+    "1.1.2": { "title": "Составление Product Backlog с приоритизацией (MoSCoW)", "stage": 1, "progress": 35, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Начальная версия Product Backlog добавлена (Product_Backlog.md). Неделя 1 — доведено до 35%." },
+
+    "1.2.1": { "title": "Проектирование пользовательских сценариев (User Flow)", "stage": 1, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "1.2.2": { "title": "Создание вайрфреймов основных экранов", "stage": 1, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "1.2.3": { "title": "Разработка дизайн-системы в Figma", "stage": 1, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "1.2.4": { "title": "Визуальный дизайн ключевых страниц", "stage": 1, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+
+    "1.3.1": { "title": "Создание репозитория GitHub с базовой структурой", "stage": 1, "progress": 35, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Неделя 1 этапа 1 — цель 35% (структура и базовые файлы созданы)" },
+    "1.3.2": { "title": "Настройка CI/CD (GitHub Actions)", "stage": 1, "progress": 35, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Базовый workflow создан (поставлен на 35% как результат работы в этой сессии)" },
+    "1.3.3": { "title": "Развертывание тестового сервера (Yandex Cloud/VPS)", "stage": 1, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Отложено" },
+    "1.3.4": { "title": "Настройка домена и SSL-сертификата", "stage": 1, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Отложено" },
+
+    "2.1.1": { "title": "Проектирование схемы БД (PostgreSQL)", "stage": 2, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Черновик `prisma/schema.prisma` добавлен в репозиторий, но выполнение задач этапа 2 откладывается до завершения этапа 1; прогресс учтётся после перехода на этап 2" },
+    "2.1.2": { "title": "Создание моделей: User, Course, Lesson, CTFChallenge, UserProgress", "stage": 2, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Модели описаны в `prisma/schema.prisma` как черновик; прогресс будет учитываться при старте этапа 2" },
+    "2.1.3": { "title": "Настройка миграций (TypeORM / Prisma)", "stage": 2, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+
+    "2.2.1": { "title": "Реализация регистрации/входа (email + пароль)", "stage": 2, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "2.2.2": { "title": "JWT-токены, middleware для проверки прав", "stage": 2, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "2.2.3": { "title": "Восстановление пароля (email-верификация)", "stage": 2, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+
+    "2.3.1": { "title": "GRUD для курсов и уроков", "stage": 2, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "2.3.2": { "title": "Система прогресса (отметка о прохождении курса)", "stage": 2, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "2.3.3": { "title": "Генерация сертификата (PDF)", "stage": 2, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+
+    "2.4.1": { "title": "GRUD для CTF-задач", "stage": 2, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "2.4.2": { "title": "Система проверки флагов", "stage": 2, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "2.4.3": { "title": "Таблица лидеров и статистика", "stage": 2, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+
+    "2.5.1": { "title": "Настройка API-клиента для GigaChat", "stage": 2, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "2.5.2": { "title": "Реализация чат-интерфейса", "stage": 2, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "2.5.3": { "title": "Кэширование ответов для экономии токенов", "stage": 2, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+
+    "3.1.1": { "title": "Настройка Next.js + TypeScript + Tailwind CSS", "stage": 3, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Минимальные файлы есть, но фронт начнем в этапе 3" },
+    "3.1.2": { "title": "Создание компонентов: Header, Footer, Sidebar, Card, Button", "stage": 3, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "3.1.3": { "title": "Настройка роутинга и навигации", "stage": 3, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+
+    "3.2.1": { "title": "Лендинг с Hero-секцией с СТА", "stage": 3, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "3.2.2": { "title": "Личный кабинет: прогресс, активные курсы, статистика", "stage": 3, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "3.2.3": { "title": "Страница профиля (редактирование данных)", "stage": 3, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+
+    "3.3.1": { "title": "Каталог курсов с фильтрами", "stage": 3, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "3.3.2": { "title": "Страница курса: список уроков, прогресс-бар", "stage": 3, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "3.3.3": { "title": "Интерфейс урока: текст, изображения, тест", "stage": 3, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "3.3.4": { "title": "Система завершения урока и перехода к следующему", "stage": 3, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+
+    "3.4.1": { "title": "Список задач с фильтрами по сложности и категориям", "stage": 3, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "3.4.2": { "title": "Страница задачи: описание, форма для флага, подсказки", "stage": 3, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "3.4.3": { "title": "Таблица лидеров (рейтинг пользователей)", "stage": 3, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "3.4.4": { "title": "История решенных задач", "stage": 3, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+
+    "3.5.1": { "title": "Настройка API-клиента (axios/fetch)", "stage": 3, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "3.5.2": { "title": "Обработка состояний загрузки и ошибок", "stage": 3, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "3.5.3": { "title": "Кэширование данных (React Query/SWR)", "stage": 3, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+
+    "4.1.1": { "title": "Функциональное тестирование всех сценариев", "stage": 4, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "4.1.2": { "title": "Исправление критических и мажорных багов", "stage": 4, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "4.1.3": { "title": "Тестирование производительности и безопасности", "stage": 4, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "4.1.4": { "title": "Адаптивная верстка (mobile, tablet, desktop)", "stage": 4, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+
+    "4.2.1": { "title": "Создание 2 курсов (5 уроков каждый) с тестами", "stage": 4, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "4.2.2": { "title": "Разработка 10-15 CTF-задач (Web, Crypto, Forensics)", "stage": 4, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "4.2.3": { "title": "Написание статей для базы знаний (5-7 статей)", "stage": 4, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+
+    "4.3.1": { "title": "Настройка продакшен-среды (Docker, Nginx)", "stage": 4, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "4.3.2": { "title": "Перенос БД на продакшен", "stage": 4, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "4.3.3": { "title": "Финальное тестирование на продакшен-сервере", "stage": 4, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+
+    "4.4.1": { "title": "Открытие доступа для первых пользователей", "stage": 4, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "4.4.2": { "title": "Настройка аналитики (Yandex.Metrica)", "stage": 4, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "4.4.3": { "title": "Мониторинг ошибок (Sentry)", "stage": 4, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" },
+    "4.4.4": { "title": "Сбор обратной связи", "stage": 4, "progress": 0, "weeklyTargets": { "week1": 35, "week2": 70, "week3": 95 }, "notes": "Не начато" }
+  }
+}

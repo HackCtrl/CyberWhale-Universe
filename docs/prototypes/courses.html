@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CyberWhale — Каталог курсов (Prototype)</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">CyberWhale</div>
+      <nav class="nav">
+        <a href="./index.html">Курсы</a>
+        <a href="./courses.html" class="active">Каталог</a>
+        <a href="./ctf.html">CTF</a>
+      </nav>
+      <div class="actions"><a href="./dashboard.html">Войти</a></div>
+    </header>
+
+    <section style="padding-top:18px">
+      <div class="wrap">
+        <div class="filters">
+          <input placeholder="Поиск курсов" />
+          <div style="display:flex;gap:8px"><a class="btn secondary">Фильтр</a></div>
+        </div>
+
+        <div class="cards">
+          <article class="card"><h3>Web‑безопасность</h3><p style="color:var(--muted)">Разбираем уязвимости в web-приложениях</p><div style="margin-top:12px"><a class="btn" href="./courses.html">Подробнее</a></div></article>
+          <article class="card"><h3>Введение в пентест</h3><p style="color:var(--muted)">Быстрый старт в offensive security</p><div style="margin-top:12px"><a class="btn" href="./courses.html">Записаться</a></div></article>
+          <article class="card"><h3>CTF практика</h3><p style="color:var(--muted)">Задачи и walkthrough</p><div style="margin-top:12px"><a class="btn" href="./courses.html">Записаться</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">© CyberWhale — прототип</div>
+  </div>
+</body>
+</html>

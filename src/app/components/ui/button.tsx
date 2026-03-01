@@ -56,7 +56,7 @@ function Button({
       disabled={isLoading || (props as any).disabled}
       {...props}
     >
-      {isLoading ? <span className="cw-spinner" aria-hidden="true" /> : null}
+      {isLoading ? <span className="cw-spinner" aria-hidden="true" data-testid="cw-spinner" /> : null}
       {props.children}
     </Comp>
   );

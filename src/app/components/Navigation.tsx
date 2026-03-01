@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { Home, GraduationCap, Shield, Briefcase, Bot, Users, Trophy, User } from 'lucide-react';
 import { motion } from 'motion/react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const navItems = [
   { path: '/', label: 'Главная', icon: Home },
@@ -15,6 +15,14 @@ const navItems = [
 ];
 
 export function Navigation() {
+  const [token, setToken] = useState<string | null>(null);
+  const [userName, setUserName] = useState<string | null>(null);
+
+  useEffect(() => {
+    setToken(localStorage.getItem('token'));
+    setUserName(localStorage.getItem('userName'));
+  }, []);
+
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -71,15 +79,31 @@ export function Navigation() {
           </div>
 
           {/* Auth Button */}
-          <Link to="/auth">
+          {token ? (
             <motion.button
-              whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(159, 239, 0, 0.3)' }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-2 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-all"
+              onClick={() => {
+                localStorage.removeItem('token');
+                localStorage.removeItem('userName');
+                setToken(null);
+                window.location.href = '/';
+              }}
+              className="px-6 py-2 rounded-lg bg-card border border-border text-foreground font-medium hover:bg-card/80 transition-all text-sm"
             >
-              Войти
+              Выйти ({userName || 'User'})
             </motion.button>
-          </Link>
+          ) : (
+            <Link to="/auth">
+              <motion.button
+                whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(159, 239, 0, 0.3)' }}
+                whileTap={{ scale: 0.95 }}
+                className="px-6 py-2 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-all text-sm"
+              >
+                Войти
+              </motion.button>
+            </Link>
+          )}
 
           {/* Mobile Menu Button */}
           <button

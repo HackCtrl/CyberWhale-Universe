@@ -3,11 +3,31 @@
 @tailwind utilities;
 
 :root {
+  /* Color tokens (sync with Tailwind palette) */
   --background: #0f1724;
   --foreground: #e6e9ef;
   --primary: #9fef00;
+  --primary-foreground: #0b0b00;
   --secondary: #60a5fa;
+  --secondary-foreground: #05204a;
+  --card: #0b1220;
+  --card-foreground: #e6e9ef;
+  --muted: #94a3b8;
+  --destructive: #ef4444;
+  --ring: #9fef00;
   --radius: 8px;
+
+  /* Typographic scale */
+  --font-xs: 12px;
+  --font-sm: 14px;
+  --font-base: 16px;
+  --font-lg: 18px;
+  --font-xl: 20px;
+  --leading-xs: 16px;
+  --leading-sm: 20px;
+  --leading-base: 24px;
+  --leading-lg: 28px;
+  --leading-xl: 30px;
 }
 
 body { background: var(--background); color: var(--foreground); }
@@ -15,3 +35,9 @@ body { background: var(--background); color: var(--foreground); }
 .cw-btn { border-radius: var(--radius); }
 .cw-spinner { display:inline-block; width:16px; height:16px; border-radius:50%; border:2px solid rgba(255,255,255,0.12); border-top-color:var(--primary); animation: cw-spin 800ms linear infinite }
 @keyframes cw-spin { to { transform: rotate(360deg); } }
+
+/* Utility to use design tokens for typography when needed */
+html { font-size: var(--font-base); }
+h1 { font-size: var(--font-xl); line-height: var(--leading-xl); }
+h2 { font-size: var(--font-lg); line-height: var(--leading-lg); }
+p, li { font-size: var(--font-base); line-height: var(--leading-base); }
