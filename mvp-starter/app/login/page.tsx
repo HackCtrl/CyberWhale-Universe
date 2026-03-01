@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 
 export default function LoginPage() {
@@ -13,7 +13,7 @@ export default function LoginPage() {
       const res = await fetch('http://localhost:4000/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email, password }),
       });
       const data = await res.json();
       if (!res.ok) setMsg(data.error || 'Ошибка');
@@ -21,7 +21,7 @@ export default function LoginPage() {
         if (data.token) {
           localStorage.setItem('token', data.token);
           setMsg('Успешно, перенаправление...');
-          setTimeout(() => window.location.href = '/', 600);
+          setTimeout(() => (window.location.href = '/'), 600);
         } else {
           setMsg('Вход выполнен');
         }
@@ -37,11 +37,20 @@ export default function LoginPage() {
       <form onSubmit={submit} className="space-y-4">
         <div>
           <label className="block text-sm">Email</label>
-          <input value={email} onChange={e=>setEmail(e.target.value)} className="w-full border p-2" />
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full border p-2"
+          />
         </div>
         <div>
           <label className="block text-sm">Пароль</label>
-          <input type="password" value={password} onChange={e=>setPassword(e.target.value)} className="w-full border p-2" />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full border p-2"
+          />
         </div>
         <button className="px-4 py-2 bg-green-600 text-white">Войти</button>
       </form>
@@ -49,4 +58,3 @@ export default function LoginPage() {
     </main>
   );
 }
-

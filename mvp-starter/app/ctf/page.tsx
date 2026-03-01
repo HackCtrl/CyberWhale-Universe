@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useEffect, useState } from 'react';
 
@@ -6,12 +6,14 @@ type CTF = { id: number; title: string; description?: string };
 
 export default function CtfPage() {
   const [ctfs, setCtfs] = useState<CTF[]>([]);
-  const [flags, setFlags] = useState<Record<number,string>>({});
+  const [flags, setFlags] = useState<Record<number, string>>({});
   const [msg, setMsg] = useState('');
 
   const base = 'http://localhost:4000';
 
-  useEffect(() => { load(); }, []);
+  useEffect(() => {
+    load();
+  }, []);
 
   async function load() {
     const res = await fetch(`${base}/api/ctf`);
@@ -22,7 +24,14 @@ export default function CtfPage() {
   async function submit(id: number) {
     setMsg('Отправка...');
     const token = localStorage.getItem('token');
-    const res = await fetch(`${base}/api/ctf/${id}/submit`, { method: 'POST', headers: { 'content-type': 'application/json', Authorization: token ? `Bearer ${token}` : '' }, body: JSON.stringify({ flag: flags[id] || '' }) });
+    const res = await fetch(`${base}/api/ctf/${id}/submit`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        Authorization: token ? `Bearer ${token}` : '',
+      },
+      body: JSON.stringify({ flag: flags[id] || '' }),
+    });
     const d = await res.json();
     if (!res.ok) return setMsg('Ошибка сервера');
     if (d.ok) {
@@ -40,7 +49,7 @@ export default function CtfPage() {
       <p className="mb-4 text-sm text-slate-600">Список задач и форма отправки флагов.</p>
 
       <ul className="space-y-4">
-        {ctfs.map(c => (
+        {ctfs.map((c) => (
           <li key={c.id} className="p-4 border rounded bg-white">
             <div className="flex justify-between">
               <div>
@@ -48,8 +57,15 @@ export default function CtfPage() {
                 <div className="text-sm text-slate-600">{c.description}</div>
               </div>
               <div style={{ width: 240 }}>
-                <input placeholder="flag{...}" value={flags[c.id] || ''} onChange={e=>setFlags({...flags, [c.id]: e.target.value})} className="w-full border p-2 mb-2" />
-                <button onClick={() => submit(c.id)} className="px-3 py-1 bg-green-600 text-white">Submit Flag</button>
+                <input
+                  placeholder="flag{...}"
+                  value={flags[c.id] || ''}
+                  onChange={(e) => setFlags({ ...flags, [c.id]: e.target.value })}
+                  className="w-full border p-2 mb-2"
+                />
+                <button onClick={() => submit(c.id)} className="px-3 py-1 bg-green-600 text-white">
+                  Submit Flag
+                </button>
               </div>
             </div>
           </li>

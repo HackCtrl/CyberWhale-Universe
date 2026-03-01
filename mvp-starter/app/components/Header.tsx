@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useEffect, useState } from 'react';
 
@@ -9,8 +9,8 @@ export default function Header() {
     const t = localStorage.getItem('token');
     if (!t) return;
     fetch('http://localhost:4000/api/auth/me', { headers: { Authorization: `Bearer ${t}` } })
-      .then(r => r.ok ? r.json() : Promise.reject(r))
-      .then(data => setUser(data.user || data))
+      .then((r) => (r.ok ? r.json() : Promise.reject(r)))
+      .then((data) => setUser(data.user || data))
       .catch(() => setUser(null));
   }, []);
 
@@ -23,9 +23,20 @@ export default function Header() {
   }
 
   return (
-    <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: 12, borderBottom: '1px solid #eee', background: '#fff' }}>
+    <header
+      style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: 12,
+        borderBottom: '1px solid #eee',
+        background: '#fff',
+      }}
+    >
       <div>
-        <a href="/" style={{ fontWeight: 700, textDecoration: 'none', color: '#111' }}>CyberWhale</a>
+        <a href="/" style={{ fontWeight: 700, textDecoration: 'none', color: '#111' }}>
+          CyberWhale
+        </a>
       </div>
       <nav>
         {!user ? (
@@ -40,7 +51,9 @@ export default function Header() {
               <div style={{ fontSize: 14, fontWeight: 600 }}>{user.name || user.email}</div>
               <div style={{ fontSize: 12, color: '#666' }}>{user.email}</div>
             </div>
-            <button onClick={logout} style={{ padding: '6px 10px' }}>Logout</button>
+            <button onClick={logout} style={{ padding: '6px 10px' }}>
+              Logout
+            </button>
           </div>
         )}
       </nav>

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useEffect, useState } from 'react';
 
@@ -8,18 +8,22 @@ export default function LeaderboardPage() {
   const [loading, setLoading] = useState(false);
   const base = 'http://localhost:4000';
 
-  useEffect(() => { load(); }, []);
+  useEffect(() => {
+    load();
+  }, []);
 
   async function load() {
     setLoading(true);
     try {
-      const l = await fetch(`${base}/api/ctf/leaderboard`).then(r=>r.json());
-      const s = await fetch(`${base}/api/ctf/stats`).then(r=>r.json());
+      const l = await fetch(`${base}/api/ctf/leaderboard`).then((r) => r.json());
+      const s = await fetch(`${base}/api/ctf/stats`).then((r) => r.json());
       setLeaders(l);
       setStats(s);
     } catch (e) {
       console.error(e);
-    } finally { setLoading(false); }
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -34,7 +38,9 @@ export default function LeaderboardPage() {
               {leaders.map((u, i) => (
                 <li key={u.userId} className="mb-2">
                   <div className="font-medium">{u.name || u.email}</div>
-                  <div className="text-sm text-slate-600">Очки: {u.score} — Решено: {u.solves}</div>
+                  <div className="text-sm text-slate-600">
+                    Очки: {u.score} — Решено: {u.solves}
+                  </div>
                 </li>
               ))}
             </ol>
@@ -42,12 +48,16 @@ export default function LeaderboardPage() {
 
           <section>
             <h2 className="font-semibold mb-2">Статистика</h2>
-            <div className="text-sm text-slate-600 mb-2">Всего зачтено: {stats?.totalSolves ?? 0}</div>
+            <div className="text-sm text-slate-600 mb-2">
+              Всего зачтено: {stats?.totalSolves ?? 0}
+            </div>
             <ul>
               {stats?.challenges?.map((c: any) => (
                 <li key={c.id} className="mb-2">
                   <div className="font-medium">{c.title}</div>
-                  <div className="text-sm text-slate-600">Сложность: {c.difficulty} — Решено: {c.solves}</div>
+                  <div className="text-sm text-slate-600">
+                    Сложность: {c.difficulty} — Решено: {c.solves}
+                  </div>
                 </li>
               ))}
             </ul>

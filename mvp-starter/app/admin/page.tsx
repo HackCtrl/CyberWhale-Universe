@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState, useEffect } from 'react';
 
@@ -24,7 +24,11 @@ export default function AdminPage() {
     setErrorMsg(null);
     setLoading(true);
     try {
-      const res = await fetch(`${base}/api/auth/login`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ email, password }) });
+      const res = await fetch(`${base}/api/auth/login`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
       if (!res.ok) {
         const txt = await res.text();
         setErrorMsg('Login failed: ' + txt);
@@ -46,7 +50,11 @@ export default function AdminPage() {
     if (!email || !password) return setErrorMsg('Enter email and password to create admin');
     setLoading(true);
     try {
-      const res = await fetch(`${base}/api/auth/register`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ email, password, name: 'Administrator' }) });
+      const res = await fetch(`${base}/api/auth/register`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ email, password, name: 'Administrator' }),
+      });
       if (!res.ok) {
         const txt = await res.text();
         setErrorMsg('Register failed: ' + txt);
@@ -66,7 +74,9 @@ export default function AdminPage() {
     if (t) setToken(t);
   }, []);
 
-  useEffect(() => { if (token) loadCtf(); }, [token]);
+  useEffect(() => {
+    if (token) loadCtf();
+  }, [token]);
 
   async function loadCtf() {
     setErrorMsg(null);
@@ -86,13 +96,25 @@ export default function AdminPage() {
     if (!token) return setErrorMsg('Login as admin first');
     setLoading(true);
     try {
-      const res = await fetch(`${base}/api/ctf`, { method: 'POST', headers: { 'content-type': 'application/json', Authorization: `Bearer ${token}` }, body: JSON.stringify({ title: newTitle, description: newDesc, flag: newFlag, difficulty: newDiff }) });
+      const res = await fetch(`${base}/api/ctf`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json', Authorization: `Bearer ${token}` },
+        body: JSON.stringify({
+          title: newTitle,
+          description: newDesc,
+          flag: newFlag,
+          difficulty: newDiff,
+        }),
+      });
       if (!res.ok) {
         const txt = await res.text();
         setErrorMsg('Create failed: ' + txt);
         return;
       }
-      setNewTitle(''); setNewDesc(''); setNewFlag(''); setNewDiff(1);
+      setNewTitle('');
+      setNewDesc('');
+      setNewFlag('');
+      setNewDiff(1);
       await loadCtf();
     } catch (err: any) {
       setErrorMsg(String(err));
@@ -107,7 +129,10 @@ export default function AdminPage() {
     if (!confirm('Delete challenge #' + id + '?')) return;
     setLoading(true);
     try {
-      const res = await fetch(`${base}/api/ctf/${id}`, { method: 'DELETE', headers: { Authorization: `Bearer ${token}` } });
+      const res = await fetch(`${base}/api/ctf/${id}`, {
+        method: 'DELETE',
+        headers: { Authorization: `Bearer ${token}` },
+      });
       if (!res.ok) {
         const txt = await res.text();
         setErrorMsg('Delete failed: ' + txt);
@@ -124,30 +149,56 @@ export default function AdminPage() {
   return (
     <div style={{ padding: 20, fontFamily: 'Arial, sans-serif' }}>
       <h1>Admin Panel — Content Management</h1>
-          {!token ? (
+      {!token ? (
         <form onSubmit={login} style={{ maxWidth: 480 }}>
           <div style={{ marginBottom: 8 }}>
-            <label>Email</label><br />
-            <input value={email} onChange={e => setEmail(e.target.value)} style={{ width: '100%' }} />
+            <label>Email</label>
+            <br />
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              style={{ width: '100%' }}
+            />
           </div>
           <div style={{ marginBottom: 8 }}>
-            <label>Password</label><br />
-            <input type="password" value={password} onChange={e => setPassword(e.target.value)} style={{ width: '100%' }} />
+            <label>Password</label>
+            <br />
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              style={{ width: '100%' }}
+            />
           </div>
           <div style={{ display: 'flex', gap: 8 }}>
             <button type="submit">Login</button>
-            <button type="button" onClick={() => registerAdmin()}>Create admin</button>
+            <button type="button" onClick={() => registerAdmin()}>
+              Create admin
+            </button>
           </div>
-          <div style={{ marginTop: 8, color: '#666' }}>Default admin email: admin@cyberwhale.test</div>
+          <div style={{ marginTop: 8, color: '#666' }}>
+            Default admin email: admin@cyberwhale.test
+          </div>
         </form>
       ) : (
         <div>
           <div style={{ marginBottom: 12 }}>
-            <button onClick={() => { setToken(null); localStorage.removeItem('admin_token'); }}>Logout</button>
+            <button
+              onClick={() => {
+                setToken(null);
+                localStorage.removeItem('admin_token');
+              }}
+            >
+              Logout
+            </button>
           </div>
           <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
-            <button onClick={() => setTab('ctf')} disabled={tab === 'ctf'}>CTF Challenges</button>
-            <button onClick={() => setTab('courses')} disabled={tab === 'courses'}>Courses (open in Courses page)</button>
+            <button onClick={() => setTab('ctf')} disabled={tab === 'ctf'}>
+              CTF Challenges
+            </button>
+            <button onClick={() => setTab('courses')} disabled={tab === 'courses'}>
+              Courses (open in Courses page)
+            </button>
           </div>
 
           {tab === 'ctf' && (
@@ -155,22 +206,57 @@ export default function AdminPage() {
               {errorMsg && <div style={{ color: 'crimson', marginBottom: 8 }}>{errorMsg}</div>}
               <h2>Create CTF Challenge</h2>
               <form onSubmit={createCtf} style={{ maxWidth: 640 }}>
-                <input placeholder="Title" value={newTitle} onChange={e => setNewTitle(e.target.value)} required style={{ width: '100%', marginBottom:8 }} />
-                <input placeholder="Short description" value={newDesc} onChange={e => setNewDesc(e.target.value)} style={{ width: '100%', marginBottom:8 }} />
-                <input placeholder="Flag (for dev)" value={newFlag} onChange={e => setNewFlag(e.target.value)} required style={{ width: '100%', marginBottom:8 }} />
-                <label>Difficulty</label><br />
-                <input type="number" value={newDiff} onChange={e => setNewDiff(Number(e.target.value))} min={1} max={10} style={{ width: 120, marginBottom:8 }} />
-                <div><button type="submit" disabled={loading}>{loading ? 'Creating…' : 'Create'}</button></div>
+                <input
+                  placeholder="Title"
+                  value={newTitle}
+                  onChange={(e) => setNewTitle(e.target.value)}
+                  required
+                  style={{ width: '100%', marginBottom: 8 }}
+                />
+                <input
+                  placeholder="Short description"
+                  value={newDesc}
+                  onChange={(e) => setNewDesc(e.target.value)}
+                  style={{ width: '100%', marginBottom: 8 }}
+                />
+                <input
+                  placeholder="Flag (for dev)"
+                  value={newFlag}
+                  onChange={(e) => setNewFlag(e.target.value)}
+                  required
+                  style={{ width: '100%', marginBottom: 8 }}
+                />
+                <label>Difficulty</label>
+                <br />
+                <input
+                  type="number"
+                  value={newDiff}
+                  onChange={(e) => setNewDiff(Number(e.target.value))}
+                  min={1}
+                  max={10}
+                  style={{ width: 120, marginBottom: 8 }}
+                />
+                <div>
+                  <button type="submit" disabled={loading}>
+                    {loading ? 'Creating…' : 'Create'}
+                  </button>
+                </div>
               </form>
 
               <h2 style={{ marginTop: 20 }}>Challenges</h2>
               <ul>
-                {ctfList.map(c => (
+                {ctfList.map((c) => (
                   <li key={c.id} style={{ marginBottom: 8 }}>
                     <strong>{c.title}</strong> (#{c.id}) — diff: {c.difficulty}
                     <div style={{ marginTop: 6 }}>
-                      <button onClick={() => navigator.clipboard?.writeText(`${base}/api/ctf/${c.id}`)}>Copy API link</button>{' '}
-                      <button onClick={() => deleteCtf(c.id)} disabled={loading}>{loading ? 'Working…' : 'Delete'}</button>
+                      <button
+                        onClick={() => navigator.clipboard?.writeText(`${base}/api/ctf/${c.id}`)}
+                      >
+                        Copy API link
+                      </button>{' '}
+                      <button onClick={() => deleteCtf(c.id)} disabled={loading}>
+                        {loading ? 'Working…' : 'Delete'}
+                      </button>
                     </div>
                   </li>
                 ))}
@@ -180,7 +266,10 @@ export default function AdminPage() {
 
           {tab === 'courses' && (
             <div>
-              <p>Courses are managed on the public Courses admin page. Open <a href="/courses">Courses</a>.</p>
+              <p>
+                Courses are managed on the public Courses admin page. Open{' '}
+                <a href="/courses">Courses</a>.
+              </p>
             </div>
           )}
         </div>

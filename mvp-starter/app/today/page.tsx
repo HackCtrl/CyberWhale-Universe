@@ -1,19 +1,21 @@
-import React from 'react'
+import React from 'react';
 
 export default function TodayPage() {
   const sampleTasks = [
     { id: 1, title: 'Review PRs', done: false },
     { id: 2, title: 'Finish minor bugs', done: false },
-    { id: 3, title: 'Plan next task (Gantt)', done: false }
-  ]
+    { id: 3, title: 'Plan next task (Gantt)', done: false },
+  ];
 
   return (
     <main className="max-w-3xl mx-auto p-6">
       <h1 className="text-2xl font-bold mb-4">Сегодня</h1>
-      <p className="mb-4 text-sm text-slate-600">Краткий набор задач на сегодня — каркас страницы для интеграции с таск‑менеджером.</p>
+      <p className="mb-4 text-sm text-slate-600">
+        Краткий набор задач на сегодня — каркас страницы для интеграции с таск‑менеджером.
+      </p>
 
       <ul className="space-y-3">
-        {sampleTasks.map(t => (
+        {sampleTasks.map((t) => (
           <li key={t.id} className="p-3 border rounded bg-white flex justify-between items-center">
             <div>
               <div className="font-medium">{t.title}</div>
@@ -27,8 +29,10 @@ export default function TodayPage() {
       </ul>
 
       <div className="mt-6">
-        <a href="/" className="text-sm text-blue-600">Вернуться на главную</a>
+        <a href="/" className="text-sm text-blue-600">
+          Вернуться на главную
+        </a>
       </div>
     </main>
-  )
+  );
 }

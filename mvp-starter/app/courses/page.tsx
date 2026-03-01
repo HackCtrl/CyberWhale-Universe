@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useEffect, useState } from 'react';
 
@@ -22,17 +22,24 @@ export default function CoursesPage() {
     setCourses(data);
   }
 
-  useEffect(() => { loadCourses(); }, []);
+  useEffect(() => {
+    loadCourses();
+  }, []);
 
   async function createCourse(e: React.FormEvent) {
     e.preventDefault();
     const res = await fetch(`${base}/api/courses`, {
       method: 'POST',
-      headers: { 'content-type': 'application/json', Authorization: token ? `Bearer ${token}` : '' },
-      body: JSON.stringify({ title, description })
+      headers: {
+        'content-type': 'application/json',
+        Authorization: token ? `Bearer ${token}` : '',
+      },
+      body: JSON.stringify({ title, description }),
     });
     if (res.ok) {
-      setTitle(''); setDescription(''); await loadCourses();
+      setTitle('');
+      setDescription('');
+      await loadCourses();
     } else {
       alert('Create failed: ' + (await res.text()));
     }
@@ -49,8 +56,11 @@ export default function CoursesPage() {
     try {
       const res = await fetch(`${base}/api/progress/lesson`, {
         method: 'POST',
-        headers: { 'content-type': 'application/json', Authorization: token ? `Bearer ${token}` : '' },
-        body: JSON.stringify({ lessonId })
+        headers: {
+          'content-type': 'application/json',
+          Authorization: token ? `Bearer ${token}` : '',
+        },
+        body: JSON.stringify({ lessonId }),
       });
       if (!res.ok) {
         alert('Progress update failed: ' + (await res.text()));
@@ -74,11 +84,16 @@ export default function CoursesPage() {
     if (!selectedCourse) return;
     const res = await fetch(`${base}/api/courses/${selectedCourse.id}/lessons`, {
       method: 'POST',
-      headers: { 'content-type': 'application/json', Authorization: token ? `Bearer ${token}` : '' },
-      body: JSON.stringify({ title: lessonTitle, content: lessonContent })
+      headers: {
+        'content-type': 'application/json',
+        Authorization: token ? `Bearer ${token}` : '',
+      },
+      body: JSON.stringify({ title: lessonTitle, content: lessonContent }),
     });
     if (res.ok) {
-      setLessonTitle(''); setLessonContent(''); await selectCourse(selectedCourse.id);
+      setLessonTitle('');
+      setLessonContent('');
+      await selectCourse(selectedCourse.id);
     } else {
       alert('Create lesson failed: ' + (await res.text()));
     }
@@ -89,22 +104,39 @@ export default function CoursesPage() {
       <h1>Courses (CRUD demo)</h1>
 
       <div style={{ marginBottom: 12 }}>
-        <label>JWT Token (for auth actions):</label><br />
-        <input style={{ width: '80%' }} value={token} onChange={e => setToken(e.target.value)} placeholder="Paste token from /api/auth/login" />
+        <label>JWT Token (for auth actions):</label>
+        <br />
+        <input
+          style={{ width: '80%' }}
+          value={token}
+          onChange={(e) => setToken(e.target.value)}
+          placeholder="Paste token from /api/auth/login"
+        />
       </div>
 
       <section style={{ display: 'flex', gap: 24 }}>
         <div style={{ flex: 1 }}>
           <h2>Create Course</h2>
           <form onSubmit={createCourse}>
-            <input placeholder="Title" value={title} onChange={e => setTitle(e.target.value)} required style={{ width: '100%', marginBottom:8 }} />
-            <input placeholder="Description" value={description} onChange={e => setDescription(e.target.value)} style={{ width: '100%', marginBottom:8 }} />
+            <input
+              placeholder="Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              required
+              style={{ width: '100%', marginBottom: 8 }}
+            />
+            <input
+              placeholder="Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              style={{ width: '100%', marginBottom: 8 }}
+            />
             <button type="submit">Create</button>
           </form>
 
           <h2 style={{ marginTop: 16 }}>Courses</h2>
           <ul>
-            {courses.map(c => (
+            {courses.map((c) => (
               <li key={c.id} style={{ marginBottom: 8 }}>
                 <strong>{c.title}</strong> — {c.description}
                 <div>
@@ -128,11 +160,13 @@ export default function CoursesPage() {
                 {coursePercent !== null ? `${Math.round(coursePercent * 100)}%` : '—'}
               </div>
               <ul>
-                {selectedCourse.lessons?.map(l => (
+                {selectedCourse.lessons?.map((l) => (
                   <li key={l.id} style={{ marginBottom: 8 }}>
                     <strong>{l.title}</strong> — {l.content}
                     <div>
-                      <button onClick={() => markLessonComplete(l.id)} style={{ marginTop: 6 }}>Mark complete</button>
+                      <button onClick={() => markLessonComplete(l.id)} style={{ marginTop: 6 }}>
+                        Mark complete
+                      </button>
                     </div>
                   </li>
                 ))}
@@ -140,8 +174,19 @@ export default function CoursesPage() {
 
               <h4>Add Lesson</h4>
               <form onSubmit={createLesson}>
-                <input placeholder="Lesson title" value={lessonTitle} onChange={e => setLessonTitle(e.target.value)} required style={{ width: '100%', marginBottom:8 }} />
-                <textarea placeholder="Content" value={lessonContent} onChange={e => setLessonContent(e.target.value)} style={{ width: '100%', marginBottom:8 }} />
+                <input
+                  placeholder="Lesson title"
+                  value={lessonTitle}
+                  onChange={(e) => setLessonTitle(e.target.value)}
+                  required
+                  style={{ width: '100%', marginBottom: 8 }}
+                />
+                <textarea
+                  placeholder="Content"
+                  value={lessonContent}
+                  onChange={(e) => setLessonContent(e.target.value)}
+                  style={{ width: '100%', marginBottom: 8 }}
+                />
                 <button type="submit">Add lesson</button>
               </form>
             </div>
