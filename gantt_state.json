@@ -451,7 +451,7 @@
       "id": "2.5.1",
       "title": "Настройка API-клиента для GigaChat",
       "stage": "2",
-      "progress": 0,
+      "progress": 0.001,
       "weeklyTargets": {
         "week1": null,
         "week2": null,
@@ -464,7 +464,7 @@
       "id": "2.5.2",
       "title": "Реализация чат-интерфейса для помощи по задачам",
       "stage": "2",
-      "progress": 0,
+      "progress": 0.001,
       "weeklyTargets": {
         "week1": null,
         "week2": null,

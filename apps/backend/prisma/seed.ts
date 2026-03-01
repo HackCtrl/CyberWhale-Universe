@@ -5,18 +5,22 @@ const prisma = new PrismaClient()
 
 async function main() {
   // create admin and test user (id integers in existing DB)
-  const adminPass = await bcrypt.hash('admin123', 10)
+  // set admin password to the value requested for testing (dev only)
+  const adminPass = await bcrypt.hash('301062', 10)
   const userPass = await bcrypt.hash('user123', 10)
 
-  const admin = await prisma.user.findUnique({ where: { email: 'admin@cyberwhale.test' } })
-  if (!admin) {
-    await prisma.user.create({ data: { email: 'admin@cyberwhale.test', passwordHash: adminPass, name: 'Administrator' } })
-  }
+  // ensure admin and a test user exist — use upsert so password can be updated reliably
+  await prisma.user.upsert({
+    where: { email: 'admin@cyberwhale.test' },
+    update: { passwordHash: adminPass, name: 'Administrator' },
+    create: { email: 'admin@cyberwhale.test', passwordHash: adminPass, name: 'Administrator' }
+  });
 
-  const user = await prisma.user.findUnique({ where: { email: 'user@cyberwhale.test' } })
-  if (!user) {
-    await prisma.user.create({ data: { email: 'user@cyberwhale.test', passwordHash: userPass, name: 'Test User' } })
-  }
+  await prisma.user.upsert({
+    where: { email: 'user@cyberwhale.test' },
+    update: { passwordHash: userPass, name: 'Test User' },
+    create: { email: 'user@cyberwhale.test', passwordHash: userPass, name: 'Test User' }
+  });
 
   // create a sample course if missing
   let course = await prisma.course.findFirst({ where: { title: 'Intro to CTF' } })
@@ -28,6 +32,16 @@ async function main() {
   const lessons = await prisma.lesson.findMany({ where: { courseId: course.id } })
   if (lessons.length === 0) {
     await prisma.lesson.create({ data: { courseId: course.id, title: 'What is a CTF?', content: 'Краткое введение в CTF' } })
+  }
+
+  // seed a couple of CTF challenges for admin panel testing
+  const ctf1 = await prisma.cTFChallenge.findFirst({ where: { title: 'Simple Web 1' } })
+  if (!ctf1) {
+    await prisma.cTFChallenge.create({ data: { title: 'Simple Web 1', description: 'Basic web challenge', flag: 'flag{web1}', difficulty: 1 } })
+  }
+  const ctf2 = await prisma.cTFChallenge.findFirst({ where: { title: 'Crypto 1' } })
+  if (!ctf2) {
+    await prisma.cTFChallenge.create({ data: { title: 'Crypto 1', description: 'Intro crypto', flag: 'flag{crypto1}', difficulty: 2 } })
   }
 
   console.log('Seed finished')

@@ -484,3 +484,17 @@ app.post('/api/progress/lesson', authMiddleware, async (req, res) => {
 		return res.status(500).json({ error: 'server error' });
 	}
 });
+import { AIService } from './services/ai.service';
+app.post('/api/ai/chat', authMiddleware, async (req: any, res: any) => {
+    try {
+        const { messages } = req.body;
+        if (!messages || !Array.isArray(messages)) {
+            return res.status(400).json({ error: 'messages array is required' });
+        }
+        const answer = await AIService.chat(messages);
+        return res.json({ answer });
+    } catch (e: any) {
+        console.error('AI Route Error:', e.message);
+        return res.status(500).json({ error: 'Failed to communicate with AI service', details: e.message });
+    }
+});
