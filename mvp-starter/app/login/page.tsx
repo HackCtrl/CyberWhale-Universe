@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 
 export default function LoginPage() {
@@ -48,3 +49,4 @@ export default function LoginPage() {
     </main>
   );
 }
+

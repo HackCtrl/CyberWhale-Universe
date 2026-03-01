@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 
 export default function RegisterPage() {
@@ -60,3 +61,4 @@ export default function RegisterPage() {
     </main>
   );
 }
+
