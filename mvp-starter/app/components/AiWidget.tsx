@@ -11,8 +11,11 @@ export default function AiWidget() {
     const [loading, setLoading] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
-    // Только авторизованные пользователи могут использовать AI
-    const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+    const [hasToken, setHasToken] = useState(false);
+
+    useEffect(() => {
+        setHasToken(!!localStorage.getItem('token'));
+    }, []);
 
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -30,6 +33,7 @@ export default function AiWidget() {
         setLoading(true);
 
         try {
+            const token = localStorage.getItem('token');
             const res = await fetch('http://localhost:4000/api/ai/chat', {
                 method: 'POST',
                 headers: {
@@ -53,7 +57,7 @@ export default function AiWidget() {
         }
     };
 
-    if (!token) return null; // Не показываем виджет гостям
+    if (!hasToken) return null; // Не показываем виджет гостям
 
     return (
         <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
