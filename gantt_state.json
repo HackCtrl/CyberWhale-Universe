@@ -477,7 +477,7 @@
       "id": "2.5.3",
       "title": "Кэширование ответов для экономии токенов",
       "stage": "2",
-      "progress": 0,
+      "progress": 0.12,
       "weeklyTargets": {
         "week1": null,
         "week2": null,

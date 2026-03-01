@@ -1,5 +1,6 @@
-import { AICacheService } from './ai-cache.service';
-import axios from 'axios';
+const fs = require('fs');
+const file = 'c:/Users/Кирилл/Desktop/Проекты и сторонние сайты/CyberWhale Universe/apps/backend/src/services/ai.service.ts';
+const content = `import axios from 'axios';
 import https from 'https';
 
 const authKey = process.env.GIGACHAT_AUTH_KEY || 'MDE5Y2E5MzYtYjg1MS03Y2YxLTliMTUtMzcwZTI3ZTZlMGE0OmQ0MTJkYTNlLTg2OTAtNGM1YS1hY2JlLWM3NWE4ZTYyMTA5NA==';
@@ -19,7 +20,7 @@ export class AIService {
                         'Content-Type': 'application/x-www-form-urlencoded',
                         'Accept': 'application/json',
                         'RqUID': '6f0b1291-c7f3-43c6-bb2e-9f3efb2dc98e',
-                        'Authorization': `Basic ${authKey}`
+                        'Authorization': \`Basic \${authKey}\`
                     },
                     httpsAgent
                 }
@@ -37,11 +38,6 @@ export class AIService {
             role: msg.role === 'ai' ? 'assistant' : msg.role,
             content: msg.content
         }));
-
-        const cachedResponse = AICacheService.get(cleanMessages);
-        if (cachedResponse) {
-            return cachedResponse;
-        }
 
         try {
             // Получаем токен(он живет 30 минут, ради простоты запрашиваем при каждом запросе)
@@ -61,18 +57,19 @@ export class AIService {
                     headers: {
                         'Content-Type': 'application/json',
                         'Accept': 'application/json',
-                        'Authorization': `Bearer ${token}`
+                        'Authorization': \`Bearer \${token}\`
                     },
                     httpsAgent
                 }
             );
 
-            const answer = response.data.choices[0].message.content;
-            AICacheService.set(cleanMessages, answer);
-            return answer;
+            return response.data.choices[0].message.content;
         } catch (error: any) {
             console.error('GigaChat API Error:', error?.response?.data || error.message);
             throw new Error('Произошла ошибка при обращении к ИИ (GigaChat). Пожалуйста, попробуйте позже.');
         }
     }
-}
+}`;
+
+fs.writeFileSync(file, content);
+console.log('Done replacement');
