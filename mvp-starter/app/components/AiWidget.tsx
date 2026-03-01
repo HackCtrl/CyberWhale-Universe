@@ -11,15 +11,18 @@ export default function AiWidget() {
     const [loading, setLoading] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
+    const [mounted, setMounted] = useState(false);
     const [hasToken, setHasToken] = useState(false);
 
     useEffect(() => {
         setHasToken(!!localStorage.getItem('token'));
+        setMounted(true);
     }, []);
 
     useEffect(() => {
+        if (!mounted) return;
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-    }, [messages, isOpen]);
+    }, [messages, isOpen, mounted]);
 
     const sendMessage = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -57,7 +60,7 @@ export default function AiWidget() {
         }
     };
 
-    if (!hasToken) return null; // Не показываем виджет гостям
+    if (!mounted || !hasToken) return null; // Не показываем виджет до монтирования и гостям
 
     return (
         <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
