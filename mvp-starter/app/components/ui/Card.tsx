@@ -1,0 +1,38 @@
+import React from 'react';
+
+interface CardProps {
+  children: React.ReactNode;
+  className?: string;
+  onClick?: () => void;
+}
+
+export function Card({ children, className = '', onClick }: CardProps) {
+  const isInteractive = !!onClick;
+  
+  return (
+    <div 
+      className={`bg-gray-900 border border-gray-800 rounded-xl overflow-hidden ${
+        isInteractive ? 'cursor-pointer hover:border-gray-600 transition-colors' : ''
+      } ${className}`}
+      onClick={onClick}
+    >
+      {children}
+    </div>
+  );
+}
+
+export function CardHeader({ children, className = '' }: CardProps) {
+  return <div className={`px-6 py-4 border-b border-gray-800 ${className}`}>{children}</div>;
+}
+
+export function CardTitle({ children, className = '' }: CardProps) {
+  return <h3 className={`text-lg font-semibold text-white ${className}`}>{children}</h3>;
+}
+
+export function CardContent({ children, className = '' }: CardProps) {
+  return <div className={`p-6 ${className}`}>{children}</div>;
+}
+
+export function CardFooter({ children, className = '' }: CardProps) {
+  return <div className={`px-6 py-4 border-t border-gray-800 bg-gray-900/50 ${className}`}>{children}</div>;
+}
